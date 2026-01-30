@@ -1,0 +1,66 @@
+// variables.scss - Переменные по макету UralSteel
+
+// Colors - Точная палитра из макета
+$color-primary: #0d1f3c;        // Темно-синий (основной)
+$color-secondary: #1a3a5c;      // Средне-синий
+$color-accent: #0c234b;         // Светло-голубой (акцент)
+$color-accent-dark: #4a8fc4;    // Темнее голубой
+$color-white: #ffffff;
+$color-light: #f8f9fa;          // Очень светлый серый
+$color-text: #333333;
+$color-text-light: #666666;
+$color-border: #e0e0e0;
+$color-gray: #8a8a8a;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+$gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+
+// Typography
+$font-primary: 'Poppins', -apple-system, sans-serif;      // Современный шрифт для заголовков
+$font-secondary: 'Inter', -apple-system, sans-serif;      // Для основного текста
+
+// Font Sizes
+$font-size-base: 16px;
+$font-size-h1: 3.5rem;    // 56px
+$font-size-h2: 2.5rem;    // 40px
+$font-size-h3: 1.75rem;   // 28px
+$font-size-h4: 1.25rem;   // 20px
+$font-size-small: 0.875rem; // 14px
+
+// Spacing
+$spacing-xs: 0.5rem;    // 8px
+$spacing-sm: 1rem;      // 16px
+$spacing-md: 2rem;      // 32px
+$spacing-lg: 4rem;      // 64px
+$spacing-xl: 6rem;      // 96px
+
+// Layout
+$max-width: 1200px;
+$header-height: 80px;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+$shadow-card: 0 2px 12px rgba(13, 31, 60, 0.1);
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1400px;
+
+// Z-index layers
+$z-header: 1000;
+$z-overlay: 900;
+$z-modal: 1100;

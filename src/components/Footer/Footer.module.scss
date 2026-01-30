@@ -1,0 +1,196 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.footer {
+  background: $gradient-primary;
+  color: $color-white;
+}
+
+.footerMain {
+  padding: $spacing-xl 0 $spacing-lg;
+  
+  @include tablet {
+    padding: $spacing-lg 0 $spacing-md;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.footerGrid {
+  @include grid(3, $spacing-xl);
+  
+  @include tablet {
+    gap: $spacing-lg;
+  }
+  
+  @include mobile {
+    gap: $spacing-md;
+  }
+}
+
+.footerCol {
+  &:first-child {
+    @include desktop {
+      grid-column: span 1;
+    }
+  }
+}
+
+// Brand Section
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: $color-white;
+    letter-spacing: 1px;
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerLogo {
+  height: 80px; // Размер логотипа в футере
+  width: auto;
+  display: block;
+  object-fit: contain;
+  // Если логотип темный, можно добавить фильтр для инверсии в белый:
+  // filter: brightness(0) invert(1); 
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerDescription {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba($color-white, 0.8);
+}
+
+.footerTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $color-white;
+  margin-bottom: $spacing-md;
+}
+
+.footerText {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba($color-white, 0.8);
+}
+
+// Newsletter Form
+.newsletterForm {
+  display: flex;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  background: rgba($color-white, 0.1);
+  border: 1px solid rgba($color-white, 0.2);
+  border-radius: $border-radius-sm;
+  color: $color-white;
+  font-size: 0.9375rem;
+  transition: $transition-fast;
+  
+  &::placeholder {
+    color: rgba($color-white, 0.5);
+  }
+  
+  &:focus {
+    outline: none;
+    background: rgba($color-white, 0.15);
+    border-color: $color-accent;
+  }
+}
+
+.submitBtn {
+  padding: 0.875rem 1rem;
+  background: $color-accent;
+  border: none;
+  border-radius: $border-radius-sm;
+  color: $color-white;
+  cursor: pointer;
+  transition: $transition-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: $color-accent-dark;
+    transform: translateY(-2px);
+  }
+}
+
+// Social Links
+.socialLinks {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-white, 0.1);
+  border: 1px solid rgba($color-white, 0.2);
+  border-radius: 50%;
+  color: $color-white;
+  transition: $transition-base;
+  
+  &:hover {
+    background: $color-accent;
+    border-color: $color-accent;
+    transform: translateY(-3px);
+  }
+}
+
+// Footer Bottom
+.footerBottom {
+  background: rgba($color-primary, 0.5);
+  padding: $spacing-md 0;
+  border-top: 1px solid rgba($color-white, 0.1);
+}
+
+.footerBottomContent {
+  @include flex-between;
+  gap: $spacing-md;
+  
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-xs;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: rgba($color-white, 0.7);
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: rgba($color-white, 0.7);
+  margin: 0;
+}

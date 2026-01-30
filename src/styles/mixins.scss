@@ -1,0 +1,155 @@
+// mixins.scss - Переиспользуемые миксины
+
+@import './variables.scss';
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: #{$breakpoint-wide}) {
+    @content;
+  }
+}
+
+// Container
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include tablet {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Flex utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Button base
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  font-family: $font-primary;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: $transition-base;
+  border-radius: $border-radius-sm;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Typography
+@mixin heading-base {
+  font-family: $font-primary;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+// Card
+@mixin card {
+  background: $color-white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  padding: $spacing-md;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+// Section spacing
+@mixin section-spacing {
+  padding: $spacing-xl 0;
+  
+  @include tablet {
+    padding: $spacing-lg 0;
+  }
+}
+
+// Overlay
+@mixin overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $gradient-overlay;
+}
+
+// Clip path effects
+@mixin angle-cut($angle: 45px) {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$angle}), 0 100%);
+}
+
+// Metal texture effect
+@mixin metal-texture {
+  background: linear-gradient(
+    90deg,
+    $color-secondary 0%,
+    lighten($color-secondary, 10%) 50%,
+    $color-secondary 100%
+  );
+  background-size: 200% 100%;
+}
+
+// Glowing effect
+@mixin glow($color: $color-accent) {
+  box-shadow: 0 0 10px rgba($color, 0.3),
+              0 0 20px rgba($color, 0.2),
+              0 0 30px rgba($color, 0.1);
+}
+
+// Grid system
+@mixin grid($columns: 3, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}

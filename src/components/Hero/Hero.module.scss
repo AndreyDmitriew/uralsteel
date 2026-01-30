@@ -1,0 +1,198 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.hero {
+  position: relative;
+  background:
+    linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.4)),
+    url('/Group 1218.png') no-repeat center center;
+  background-size: cover;
+
+  color: $color-white;
+  padding: calc($header-height + 4rem) 0 4rem;
+  min-height: 600px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: calc($header-height + 3rem) 0 3rem;
+    min-height: 500px;
+  }
+
+  @include mobile {
+    /* полностью убираем картинку */
+    background: $color-primary;
+  }
+}
+
+
+.container {
+  @include container;
+  position: relative;
+  z-index: 2;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.heroText {
+  animation: slideInLeft 0.8s ease-out forwards;
+  padding-top: 35px;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+  color: $color-white;
+  
+  @include tablet {
+    font-size: 2.25rem;
+  }
+  
+  @include mobile {
+    font-size: 1.875rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba($color-white, 0.9);
+  margin-bottom: $spacing-sm;
+  max-width: 500px;
+}
+
+.heroFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: 0.9375rem;
+  color: rgba($color-white, 0.95);
+  
+  svg {
+    flex-shrink: 0;
+    color: $color-accent;
+    background: rgba($color-accent, 0.2);
+    border-radius: 50%;
+    padding: 3px;
+  }
+}
+
+.btnExplore {
+  @include button-base;
+  background: $color-accent;
+  color: $color-white;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid transparent; // Прозрачный бордер по умолчанию
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $color-accent-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($color-accent, 0.3);
+  }
+
+  // Стили только для мобильной версии и планшетов
+  @include tablet {
+    border: 1px solid rgba($color-white, 0.8); // Тонкий белый бордер
+    background: rgba($color-accent, 0.9); // Можно чуть приглушить фон, чтобы бордер был заметнее
+    
+    &:hover {
+      border-color: $color-white;
+      background: $color-accent;
+    }
+  }
+}
+
+// Hero Image
+.heroImage {
+display: none;
+
+  @include tablet {
+    height: 350px;
+    order: -1;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+
+
+.imagePlaceholder {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(135deg, rgba($color-accent, 0.1) 0%, rgba($color-accent, 0.05) 100%);
+  border-radius: $border-radius-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba($color-white, 0.3);
+  
+  @include tablet {
+    height: 350px;
+  }
+  
+  @include mobile {
+    height: 280px;
+  }
+}
+
+.engineerIcon {
+  color: rgba($color-white, 0.4);
+  margin-bottom: $spacing-md;
+  
+  @include mobile {
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.imageNote {
+  font-size: 1rem;
+  color: rgba($color-white, 0.6);
+  text-align: center;
+}
+
+// Decorative Elements
+.heroDecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.05;
+}
+
+.decorGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba($color-white, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($color-white, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
